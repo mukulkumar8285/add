@@ -1,0 +1,23 @@
+<div class="create-contractor-container">
+  <h2>Create Contractor</h2>
+  <form (submit)="createContractor()">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="contractorData.name" name="name" placeholder="Enter name" required />
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="contractorData.email" name="email" placeholder="Enter email" required />
+
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="contractorData.password" name="password" placeholder="Enter password" required />
+
+    <label>Labor IDs (comma-separated):</label>
+    <input type="text" [(ngModel)]="contractorData.labor" name="labor" placeholder="Enter labor IDs" required />
+
+    <button type="submit">Create Contractor</button>
+  </form>
+
+  <!-- Success message with animation -->
+  <div *ngIf="successMessage" [@formSubmitAnimation] class="success-message">
+    {{ successMessage }}
+  </div>
+</div>

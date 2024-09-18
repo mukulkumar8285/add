@@ -1,0 +1,24 @@
+<div class="signup-container">
+    <h2>Contractor List</h2>
+    <button (click)="loadContractors()">Fetch Contractors</button>
+</div>
+
+<div *ngIf="contractors && contractors.length > 0">
+  <ul>
+    <li *ngFor="let contractor of contractors">
+      <h3>{{ contractor.name }}</h3>
+      <p>Email: {{ contractor.email }}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="contractors && contractors.length === 0">
+  <p>No contractors found.</p>
+</div>
+
+
+
+
+
+
+
